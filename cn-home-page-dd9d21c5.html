@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>华体会 · 信息索引与资料整理</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fbfbfa;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+      color: #1e1e1e;
+      line-height: 1.6;
+      padding: 0 1.5rem;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.5rem 0 4rem;
+    }
+    /* 导航 */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0 1.8rem;
+      border-bottom: 1px solid #eaeaea;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .site-id {
+      font-weight: 500;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      color: #2a2a2a;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #4a4a4a;
+      font-size: 0.95rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color .2s;
+    }
+    .nav-links a:hover {
+      border-bottom-color: #9b9b9b;
+    }
+    /* hero 区 */
+    .hero {
+      margin: 3.5rem 0 3rem;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+    .hero p {
+      font-size: 1rem;
+      color: #4b4b4b;
+      max-width: 580px;
+    }
+    /* 通用标题 */
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 450;
+      margin: 3rem 0 1.2rem;
+      letter-spacing: -0.01em;
+      border-left: 3px solid #d0d0d0;
+      padding-left: 0.9rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin: 0 0 0.5rem;
+    }
+    /* 卡片模块 */
+    .scene-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin: 2rem 0;
+    }
+    .scene-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.6rem 1.8rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02), 0 2px 8px rgba(0,0,0,0.02);
+      border: 1px solid #efefef;
+      transition: box-shadow .2s;
+    }
+    .scene-card:hover {
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+    }
+    .scene-card p {
+      font-size: 0.95rem;
+      color: #3a3a3a;
+    }
+    .tag {
+      display: inline-block;
+      background: #f0f0ee;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.7rem;
+      border-radius: 20px;
+      color: #3f3f3f;
+      margin-top: 0.6rem;
+    }
+    /* 说明 / FAQ 摘要 */
+    .note-block {
+      background: #f7f7f5;
+      border-radius: 10px;
+      padding: 1.6rem 1.8rem;
+      margin: 2.8rem 0 1.5rem;
+    }
+    .note-block p {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .note-block ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.8rem 0 0;
+    }
+    .note-block li {
+      padding: 0.3rem 0;
+      font-size: 0.92rem;
+      border-bottom: 1px solid #eae8e6;
+    }
+    .note-block li:last-child {
+      border-bottom: none;
+    }
+    .faq-item strong {
+      font-weight: 500;
+      margin-right: 0.3rem;
+      color: #1e1e1e;
+    }
+    /* 内联链接 */
+    a {
+      color: #1e1e1e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #cbcbcb;
+      transition: text-decoration-color .2s;
+    }
+    a:hover {
+      text-decoration-color: #1e1e1e;
+    }
+    /* 页脚 */
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #eaeaea;
+      font-size: 0.85rem;
+      color: #6f6f6f;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    /* 响应式 */
+    @media (max-width: 540px) {
+      body { padding: 0 1rem; }
+      .hero h1 { font-size: 1.8rem; }
+      .scene-card { padding: 1.2rem 1.2rem; }
+      .note-block { padding: 1.2rem; }
+      nav { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+      .nav-links { gap: 1.2rem; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 导航 -->
+  <nav>
+    <span class="site-id">资料索引 · 华体会</span>
+    <div class="nav-links">
+      <a href="#intro">概述</a>
+      <a href="#scenes">场景</a>
+      <a href="#faq">说明</a>
+    </div>
+  </nav>
+
+  <!-- hero -->
+  <div class="hero" id="intro">
+    <h1>关于华体会<br>信息整理与场景笔记</h1>
+    <p>从日常使用出发，整理与 <a href="https://cn-home-hthsports.com">华体会</a> 相关的资料、常见场景以及一些实用说明。这里不替代官方，只做清晰的信息汇集。</p>
+  </div>
+
+  <!-- 三个场景模块 -->
+  <h2 id="scenes">常见使用场景</h2>
+  <div class="scene-grid">
+    <div class="scene-card">
+      <h3>📋 信息检索与资料归档</h3>
+      <p>当需要快速查找某一类内容时，合理的索引结构能节省不少时间。<a href="https://cn-home-hthsports.com">华体会</a> 相关的文档、说明和更新记录，适合按主题分类整理。把零散的信息做一次梳理，后续查找会顺畅很多。</p>
+      <span class="tag">整理习惯</span>
+    </div>
+    <div class="scene-card">
+      <h3>📎 日常使用与备忘</h3>
+      <p>无论是功能模块的入口，还是常见设置的提醒，把要点记录下来形成自己的备忘清单。有人习惯用表格，有人偏好卡片式笔记，形式不重要，关键是内容能随时调取。</p>
+      <span class="tag">个人备忘</span>
+    </div>
+    <div class="scene-card">
+      <h3>🗂️ 轻量分享与协作</h3>
+      <p>当需要把某个功能或说明同步给朋友或同事时，一份结构清晰的索引页会比零散截图更高效。保持页面简洁，去掉多余装饰，信息本身就能说明问题。</p>
+      <span class="tag">协作参考</span>
+    </div>
+  </div>
+
+  <!-- 常见说明 / FAQ 摘要 -->
+  <div class="note-block" id="faq">
+    <p style="font-weight: 450; margin-bottom: 0.8rem;">常见说明摘要</p>
+    <ul>
+      <li class="faq-item"><strong>范围：</strong>本索引聚焦于与 <a href="https://cn-home-hthsports.com">华体会</a> 相关的基础信息整理，不包含深度技术细节。</li>
+      <li class="faq-item"><strong>更新：</strong>内容会跟随可用资料做适度调整，建议偶尔回来看看是否有补充。</li>
+      <li class="faq-item"><strong>来源：</strong>所有整理均基于公开可查的材料，不涉及非公开内容。</li>
+      <li class="faq-item"><strong>提示：</strong>如果你发现某个场景或说明有遗漏，可以自己动手补充，索引本就是越用越丰富。</li>
+    </ul>
+  </div>
+
+  <!-- 额外说明块：保持克制 -->
+  <p style="font-size: 0.9rem; color: #5f5f5f; margin: 1.8rem 0 0.5rem; line-height: 1.5;">
+    这里是一份轻量导航式的资料页，不夸大功能，也不做任何承诺。信息的价值在于准确和有序，希望这个页面能帮你更快地找到需要的内容。
+  </p>
+
+  <!-- 页脚 -->
+  <footer>
+    <span>索引页 · 持续整理中</span>
+    <span>内容仅供参考</span>
+  </footer>
+
+</div>
+</body>
+</html>
